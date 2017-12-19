@@ -12,16 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="50px">
         <ImageView
+            android:id="@+id/iv_bluetooth"
             android:layout_marginLeft="20px"
             android:src="@mipmap/ic_launcher"
             android:layout_width="50px"
             android:layout_height="50px" />
         <TextView
+            android:id="@+id/tv_hlep"
             android:layout_centerInParent="true"
             android:text="HELP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_power"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20px"
             android:src="@mipmap/ic_launcher"
@@ -29,9 +32,30 @@
             android:layout_height="50px" />
     </RelativeLayout>
     <com.xdkj.xd.xdtools.view.SweepView
+        android:id="@+id/sweepView"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+   <LinearLayout
+       android:gravity="center"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="100px">
+       <Button
+           android:id="@+id/bt_minus"
+           android:text="-"
+           android:layout_width="80px"
+           android:layout_height="80px" />
+       <SeekBar
+           android:max="40"
+            android:id="@+id/sb"
+           android:layout_width="300px"
+           android:layout_height="wrap_content" />
+       <Button
+           android:id="@+id/bt_add"
+           android:text="+"
+           android:layout_width="80px"
+           android:layout_height="80px" />
+   </LinearLayout>
 </LinearLayout>
