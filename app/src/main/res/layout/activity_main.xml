@@ -31,12 +31,13 @@
             android:layout_width="50px"
             android:layout_height="50px" />
     </RelativeLayout>
-    <com.xdkj.xd.xdtools.view.SweepView
+    <com.xdkj.xd.xdtools.view.CircleView
         android:id="@+id/sweepView"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
    <LinearLayout
        android:gravity="center"
        android:orientation="horizontal"
@@ -58,4 +59,11 @@
            android:layout_width="80px"
            android:layout_height="80px" />
    </LinearLayout>
+    <!--操作按钮-->
+    <RelativeLayout
+        android:layout_marginTop="20px"
+        android:layout_width="match_parent"
+        android:layout_height="300px">
+
+    </RelativeLayout>
 </LinearLayout>

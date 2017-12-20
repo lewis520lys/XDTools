@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.xdkj.xd.xdtools.view.CircleView;
 import com.xdkj.xd.xdtools.view.SweepView;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
     private ImageView iv_bluetooth;
     private TextView tv_hlep;
     private ImageView iv_power;
-    private SweepView sweepView;
+    private CircleView sweepView;
     private Button bt_minus;
     private SeekBar sb;
     private Button bt_add;
@@ -35,7 +36,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
         iv_bluetooth = (ImageView) findViewById(R.id.iv_bluetooth);
         tv_hlep = (TextView) findViewById(R.id.tv_hlep);
         iv_power = (ImageView) findViewById(R.id.iv_power);
-        sweepView = (SweepView) findViewById(R.id.sweepView);
+        sweepView = (CircleView) findViewById(R.id.sweepView);
         bt_minus = (Button) findViewById(R.id.bt_minus);
         sb = (SeekBar) findViewById(R.id.sb);
         bt_add = (Button) findViewById(R.id.bt_add);
@@ -54,7 +55,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.bt_minus:
                 if (currentDegree>0){
                     currentDegree= currentDegree-9.0f;
-                    sweepView.setmCurrentNum(currentDegree);
+                    sweepView.setCurrentDegree(currentDegree);
                     currProgress = currentDegree / 360 * 40;
                     sb.setProgress((int) currProgress);
                 }
@@ -62,7 +63,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.bt_add:
                 if (currentDegree<360){
                     currentDegree= currentDegree+9.0f;
-                    sweepView.setmCurrentNum(currentDegree);
+                    sweepView.setCurrentDegree(currentDegree);
                     currProgress = currentDegree / 360 * 40;
                     sb.setProgress((int) currProgress);
                 }
@@ -77,7 +78,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
         currentDegree = i*9 ;
         Log.e("currentDegree",currentDegree+"");
-        sweepView.setmCurrentNum(currentDegree);
+        sweepView.setCurrentDegree(currentDegree);
 
     }
 
