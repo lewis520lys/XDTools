@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xdkj.xd.xdtools.view.CircleView;
 import com.xdkj.xd.xdtools.view.SweepView;
@@ -90,5 +91,17 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+    private long exitTime = 0;
+    @Override
+    public void onBackPressed() {
+        if(System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+            System.exit(0);
+            android.os.Process.killProcess(android.os.Process.myPid());
+        }
     }
 }
