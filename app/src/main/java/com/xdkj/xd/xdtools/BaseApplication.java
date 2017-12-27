@@ -28,9 +28,7 @@ public class BaseApplication extends Application {
 //        LogUtils.d(TAG, "OS : "+ Build.VERSION.RELEASE + " ( " + Build.VERSION.SDK_INT + " )");
 //        DeviceMgr.ScrSize realSize = DeviceMgr.getScreenRealSize(this);
 //        LogUtils.d(TAG, "Screen Size: " + realSize.w + " X " + realSize.h);
-
     }
-
     public void addActivity(final Activity curAT) {
         if (null == activityStack) {
             activityStack = new Stack<Activity>();
